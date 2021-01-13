@@ -4,7 +4,7 @@
              x:Class="StockInfoXamarin.View.Occurences">
     <ContentPage.Content>
         <StackLayout BackgroundColor="#2196F3">
-            <ListView x:Name="listka" >
+            <ListView x:Name="listka" HasUnevenRows="True" IsPullToRefreshEnabled="True" Refreshing="listka_Refreshing">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell

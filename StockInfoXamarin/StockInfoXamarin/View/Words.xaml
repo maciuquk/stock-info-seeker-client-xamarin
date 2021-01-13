@@ -4,12 +4,15 @@
              x:Class="StockInfoXamarin.View.Words">
     <ContentPage.Content>
         <StackLayout BackgroundColor="#2196F3">
-            <ListView x:Name="listka" >
+            <ListView x:Name="listka" HasUnevenRows="True" IsPullToRefreshEnabled="True" Refreshing="listka_Refreshing">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell
-                            Text="{Binding word}" TextColor="White">
-                        </TextCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding word}"/>
+                                <Button Text="Usuń" TextColor="White"></Button>
+                            </StackLayout>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

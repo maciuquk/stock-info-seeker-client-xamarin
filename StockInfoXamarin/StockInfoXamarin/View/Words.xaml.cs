@@ -37,5 +37,12 @@ namespace StockInfoXamarin.View
             ListOfWords = APIServices.GetWordsList();
             listka.ItemsSource = ListOfWords;
         }
+
+        private void listka_Refreshing(object sender, EventArgs e)
+        {
+            ListOfWords = APIServices.GetWordsList();
+            listka.ItemsSource = ListOfWords;
+            listka.EndRefresh();
+        }
     }
 }

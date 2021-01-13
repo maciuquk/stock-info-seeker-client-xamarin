@@ -35,6 +35,12 @@ namespace StockInfoXamarin.View
             listka.ItemsSource = ListOfEvents;
         }
 
+        private void listka_Refreshing(object sender, EventArgs e)
+        {
+            ListOfEvents = APIServices.GetOcurrencesList();
+            listka.ItemsSource = ListOfEvents;
+            listka.EndRefresh();
+        }
     }
     
 }
