@@ -4,9 +4,18 @@
              x:Class="StockInfoXamarin.View.Words">
     <ContentPage.Content>
         <StackLayout BackgroundColor="#2196F3">
-            <Label Text="Words"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="listka" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell
+                            Text="{Binding word}" TextColor="White">
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Entry x:Name="inputWord" Text="Wpisz" Margin="5,5,5,0" TextColor="White" ></Entry>
+            <Button Text="Dodaj" x:Name="addButton" Clicked="addButton_Clicked" BackgroundColor="white" TextColor="#2196F3" Margin="5,5,5,0"></Button>
+            <Button Text="Odśwież" x:Name="refreshButton" Clicked="refreshButton_Clicked" BackgroundColor="white" TextColor="#2196F3" Margin="5,0 ,5,5"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

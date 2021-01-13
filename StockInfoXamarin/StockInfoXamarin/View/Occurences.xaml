@@ -4,9 +4,16 @@
              x:Class="StockInfoXamarin.View.Occurences">
     <ContentPage.Content>
         <StackLayout BackgroundColor="#2196F3">
-            <Label Text="Occurences"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="listka" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell
+                            Text="{Binding Event}" TextColor="White">
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Odśwież" x:Name="refreshButton" Clicked="refreshButton_Clicked" BackgroundColor="white" TextColor="#2196F3"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

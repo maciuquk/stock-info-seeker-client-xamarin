@@ -9,5 +9,4 @@
   <ContentPage Title="Informacje" />-->
     <AppPages:Occurences Title="Zdarzenia"></AppPages:Occurences>
     <AppPages:Words Title="Wyrażenia"></AppPages:Words>
-    <AppPages:Info Title="Informacje"></AppPages:Info>
 </TabbedPage>
