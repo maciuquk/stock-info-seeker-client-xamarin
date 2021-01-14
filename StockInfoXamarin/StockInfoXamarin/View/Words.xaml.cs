@@ -44,5 +44,26 @@ namespace StockInfoXamarin.View
             listka.ItemsSource = ListOfWords;
             listka.EndRefresh();
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            var button = sender as Word;
+            //APIServices.RemoveWord(button.id);
+        }
+
+        private void listka_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            
+        }
+
+        private void listka_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var word = e.SelectedItem as Word;
+            DisplayAlert("Usunięto słowo:", word.word, "OK");
+            APIServices.RemoveWord(word.id);
+            ListOfWords = APIServices.GetWordsList();
+            listka.ItemsSource = ListOfWords;
+
+        }
     }
 }

@@ -4,21 +4,23 @@
              x:Class="StockInfoXamarin.View.Words">
     <ContentPage.Content>
         <StackLayout BackgroundColor="#2196F3">
-            <ListView x:Name="listka" HasUnevenRows="True" IsPullToRefreshEnabled="True" Refreshing="listka_Refreshing">
+            <ListView x:Name="listka" HasUnevenRows="True" IsPullToRefreshEnabled="True" Refreshing="listka_Refreshing"
+                      ItemTapped="listka_ItemTapped" ItemSelected="listka_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding word}"/>
-                                <Button Text="Usuń" TextColor="White"></Button>
+                            <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="StartAndExpand">
+                                <Label Margin="10,0,0,0" Text="{Binding word}"/>
+                            </StackLayout>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
             <Entry x:Name="inputWord" Text="Wpisz" Margin="5,5,5,0" TextColor="White" ></Entry>
-            <Button Text="Dodaj" x:Name="addButton" Clicked="addButton_Clicked" BackgroundColor="white" TextColor="#2196F3" Margin="5,5,5,0"></Button>
-            <Button Text="Odśwież" x:Name="refreshButton" Clicked="refreshButton_Clicked" BackgroundColor="white" TextColor="#2196F3" Margin="5,0 ,5,5"></Button>
+            <Button Text="Dodaj" x:Name="addButton" Clicked="addButton_Clicked" BackgroundColor="white" TextColor="#2196F3" Margin="0,5,0,0"></Button>
+            <Button Text="Odśwież" x:Name="refreshButton" Clicked="refreshButton_Clicked" BackgroundColor="white" TextColor="#2196F3" Margin="0 ,0 ,0 ,5"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
